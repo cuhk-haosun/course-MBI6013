@@ -1,0 +1,78 @@
+\documentclass[12pt,a4paper]{report}
+% Li Yixiao 20240530
+\title{RP-Latex Template}
+\author{Li Yixiao}
+\date{\today}
+
+
+
+% enable multi row table
+\usepackage{multirow}
+
+
+% enable fig containing subfigs 
+% ref: https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_3)%3A_Figures%2C_Subfigures_and_Tables
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+% for better table rules
+\usepackage{booktabs} 
+% for resizing table
+\usepackage{adjustbox} 
+
+
+% package for draw figures
+\usepackage{tikz}
+
+% for correct link rendering
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan
+    }
+\urlstyle{same}
+
+
+% fancy headers and widen the header to avoid warning
+\usepackage{fancyhdr}
+\setlength{\headheight}{18pt}
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\theauthor}
+\lhead{\thetitle}
+\cfoot{\thepage}
+
+
+% Rename "Chapter" to "Experiment"
+\renewcommand{\chaptername}{Research Project}
+
+
+
+
+
+\begin{document}
+
+\input{section/title-BB}
+\pagenumbering{roman}
+\tableofcontents
+\listoffigures
+\listoftables
+\newpage
+\setcounter{page}{0}
+\pagenumbering{arabic}
+
+\input{section/20240530}
+
+
+
+\end{document}
